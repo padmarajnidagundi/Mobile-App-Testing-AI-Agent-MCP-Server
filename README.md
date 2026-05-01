@@ -1,17 +1,19 @@
-# Mobile App Testing AI Agent MCP Server
+# Mobile Testing and Mobile Automation AI Agent MCP Server
 
-## Project Overview
-This repository provides an AI-powered test automation framework for web and mobile validation using:
+Mobile testing, mobile automation, mobile QA, and mobile test automation framework powered by AI agents and MCP tooling.
 
-- Planner Agent: explores a target app or site and generates a structured Markdown test plan.
-- Generator Agent: converts the Markdown test plan into executable Playwright or Mobilewright tests.
-- Healer Agent: runs tests, detects failures, and attempts automated repair cycles.
-- Android and iOS Orchestrators: run Planner -> Generator -> Healer as end-to-end pipelines for each platform.
-- MCP Server: exposes the framework as callable MCP tools over stdio for AI clients.
+## Project Overview: Mobile Testing, Mobile Automation, and Mobile QA
+This repository provides an AI-powered framework for mobile testing and mobile test automation (plus web validation) using:
 
-The framework is designed to accelerate test authoring, improve test stability, and provide an extensible baseline for AI-assisted QA workflows.
+- Planner Agent: explores a target app or site and generates a structured Markdown test plan for mobile QA.
+- Generator Agent: converts the Markdown test plan into executable Playwright or Mobilewright tests for mobile automation workflows.
+- Healer Agent: runs tests, detects failures, and attempts automated repair cycles to improve mobile test automation stability.
+- Android and iOS Orchestrators: run Planner -> Generator -> Healer as end-to-end pipelines for each platform and mobile testing lifecycle.
+- MCP Server: exposes the framework as callable MCP tools over stdio for AI clients and automation platforms.
 
-## Quick Setup (One Command)
+The framework is designed to accelerate mobile test authoring, improve test stability, and provide an extensible baseline for AI-assisted mobile QA workflows.
+
+## Quick Setup for Mobile Test Automation (One Command)
 For a fast web-ready setup:
 
 ```bash
@@ -36,7 +38,7 @@ On Windows PowerShell:
 Copy-Item .env.example .env
 ```
 
-## Dependencies
+## Dependencies for Mobile Automation and Mobile QA
 ### Required
 - Node.js 18+
 - npm 9+
@@ -77,7 +79,7 @@ npm run devices
 - Xcode + Command Line Tools
 - Booted iOS Simulator (or compatible cloud/mobile device provider)
 
-## Repository Structure
+## Repository Structure for Mobile Testing Projects
 ```text
 Mobile-App-Testing-AI-Agent-MCP-Server/
 ├── agents/
@@ -104,27 +106,27 @@ Mobile-App-Testing-AI-Agent-MCP-Server/
 └── package.json
 ```
 
-### What each area does
-- agents: AI agent implementations for planning, generation, and healing.
+### What each area does for mobile testing and automation
+- agents: AI agent implementations for planning, generation, and healing in mobile test automation pipelines.
 - mcp: stdio MCP server exposing planner, generator, healer, and orchestrator tools.
-- orchestrators: platform-specific pipeline runners for Android and iOS.
-- tests: executable specs, including generated tests and curated examples.
+- orchestrators: platform-specific pipeline runners for Android and iOS mobile automation.
+- tests: executable specs, including generated tests and curated examples for mobile QA.
 - plans: Markdown test plans used as source input for code generation.
-- reports: test and healing run artifacts.
+- reports: mobile testing and healing run artifacts.
 
-## Usage Guide
+## Usage Guide for Mobile Testing and Mobile QA
 ### 1. Run web test suite
 ```bash
 npm run test:web
 ```
 
-### 2. Run mobile viewport projects in Playwright
+### 2. Run mobile viewport projects in Playwright (mobile testing)
 ```bash
 npm run test:mobile-chrome
 npm run test:mobile-safari
 ```
 
-### 3. Run Android or iOS Mobilewright tests
+### 3. Run Android or iOS Mobilewright tests for mobile automation
 ```bash
 npm run test:android
 npm run test:ios
@@ -170,8 +172,8 @@ Direct CLI example:
 node agents/healer.js --spec=tests/uselessweb/uselessweb.spec.js --platform=web --retries=3
 ```
 
-### 5. Add a new test with Android and iOS agents
-Use this flow when you want to create tests for a new target URL.
+### 5. Add a new test with Android and iOS agents (mobile test automation flow)
+Use this flow when you want to create tests for a new target URL in your mobile QA process.
 
 #### Android agent flow (plan -> generate -> run -> heal)
 1. Generate an Android test plan:
@@ -229,7 +231,7 @@ npm run orchestrate:android -- --url=https://uselessweb.org --retries=3
 npm run orchestrate:ios -- --url=https://uselessweb.org --retries=3
 ```
 
-### 6. Run orchestration pipelines
+### 6. Run orchestration pipelines for mobile automation
 #### Android pipeline
 ```bash
 npm run orchestrate:android
@@ -246,6 +248,14 @@ npm run pipeline:web
 ```
 
 This executes Planner -> Generator -> Healer for web.
+
+### 7b. Run complete mobile QA pipelines
+For end-to-end mobile test automation on each platform:
+
+```bash
+npm run orchestrate:android
+npm run orchestrate:ios
+```
 
 ### 8. Start the MCP server
 ```bash
@@ -281,7 +291,25 @@ Use this in an MCP-capable client configuration file:
 }
 ```
 
-## Contributing
+### 11. CI/CD pipeline (GitHub Actions)
+This repository now includes a CI/CD workflow at .github/workflows/ci-cd.yml.
+
+CI behavior:
+- Runs on pushes to main and pull requests targeting main.
+- Installs dependencies with npm ci.
+- Installs Playwright Chromium.
+- Executes the web suite with npm run test:web.
+- Uploads Playwright report artifacts when available.
+
+CD behavior:
+- Runs after CI on pushes to main.
+- Triggers deployment only if DEPLOY_WEBHOOK_URL is configured as a repository secret.
+- Safely skips deployment when the secret is not set.
+
+To enable deployment, add this repository secret:
+- DEPLOY_WEBHOOK_URL
+
+## Contributing to Mobile Testing and Mobile Automation
 Contributions are welcome. Please follow the workflow below:
 
 1. Fork the repository.
@@ -313,6 +341,20 @@ Special thanks to the Mobilewright maintainers and contributors for enabling pra
 
 ## License
 ISC
+
+## Mobile Testing FAQ (SEO)
+
+### What is mobile test automation?
+Mobile test automation is the practice of using tools and scripts to validate mobile apps and mobile web experiences automatically across Android and iOS.
+
+### How does this repository help with mobile QA?
+This project supports mobile QA with AI-driven planning, test generation, and self-healing execution, plus Android and iOS orchestration flows.
+
+### Is this suitable for mobile automation teams?
+Yes. It is built for teams that need scalable mobile automation, repeatable test pipelines, and faster feedback cycles for releases.
+
+### Which mobile testing keywords does this framework target?
+This framework focuses on practical workflows for mobile testing, mobile automation, mobile QA, and mobile test automation.
 
 
 ## Questions?
