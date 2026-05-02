@@ -1,5 +1,7 @@
 # Mobile Testing and Mobile Automation AI Agent MCP Server
 
+## Native mobile app testing for iOS & Android Real Devices
+
 Mobile testing, mobile automation, mobile QA, and mobile test automation framework powered by AI agents and MCP tooling.
 
 ## Project Overview: Mobile Testing, Mobile Automation, and Mobile QA
