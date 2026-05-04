@@ -15,6 +15,23 @@ This repository provides an AI-powered framework for mobile testing and mobile t
 
 The framework is designed to accelerate mobile test authoring, improve test stability, and provide an extensible baseline for AI-assisted mobile QA workflows.
 
+## Native Development Framework Support Matrix
+
+The automation stack runs against Android and iOS app binaries/devices. In practice, this means support is based on platform runtime behavior rather than only the app framework.
+
+| Native app development framework | Support status | Notes |
+| --- | --- | --- |
+| Android native (Kotlin/Java) | Supported | Run with the Android Mobilewright flow (`npm run test:android` / Android orchestrator). |
+| iOS native (Swift/Objective-C) | Supported | Run with the iOS Mobilewright flow (`npm run test:ios` / iOS orchestrator). |
+| React Native | Supported (via Android/iOS builds) | Test the compiled Android/iOS app using platform-specific selectors and flows. |
+| Flutter | Supported (via Android/iOS builds) | Works through generated native app binaries on Android/iOS devices/simulators. |
+| .NET MAUI / Xamarin | Supported (via Android/iOS builds) | Use Android/iOS pipelines after producing platform app builds. |
+| Ionic / Cordova / Capacitor | Supported (via Android/iOS builds) | Treat as mobile app binaries; use web-context selectors where applicable. |
+
+Notes:
+- This project currently provides platform orchestrators for Android and iOS.
+- Framework support is validated at runtime through the produced Android/iOS app package and testability of UI selectors.
+
 ## Quick Setup for Mobile Test Automation (One Command)
 For a fast web-ready setup:
 
