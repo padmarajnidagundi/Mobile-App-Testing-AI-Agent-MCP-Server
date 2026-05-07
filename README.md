@@ -387,7 +387,7 @@ If you have any questions:
 
 ---
 
-### First-Time Contributors Welcome! 👋👋👋👋
+### First-Time Contributors Welcome! 👋👋👋👋👋👋
 
 New to open source? No problem! Look for issues tagged with `good-first-issue` or `help-wanted`. We provide mentorship and guidance to help you succeed.
 
