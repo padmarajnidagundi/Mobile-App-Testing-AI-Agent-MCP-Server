@@ -361,9 +361,9 @@ Special thanks to the Mobilewright maintainers and contributors for enabling pra
 ## License
 ISC
 
-## Mobile Testing FAQ (SEO)
+## Mobile Testing FAQ
 
-### What is mobile test automation?
+### What is native mobile test automation?
 Mobile test automation is the practice of using tools and scripts to validate mobile apps and mobile web experiences automatically across Android and iOS.
 
 ### How does this repository help with mobile QA?
