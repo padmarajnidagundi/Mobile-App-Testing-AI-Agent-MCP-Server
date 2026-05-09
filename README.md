@@ -383,7 +383,7 @@ If you have any questions:
 - 🐛 Report bugs via [GitHub Issues](https://github.com/padmarajnidagundi/Playwright-AI-Agent-POM-MCP-Server/issues)
 - 📧 Email: padmaraj dot nidagundi at gmail.com
 
-**Response time:** Typically 24-48 hours
+**Response time:** Typically 24-48 hours.
 
 ---
 
