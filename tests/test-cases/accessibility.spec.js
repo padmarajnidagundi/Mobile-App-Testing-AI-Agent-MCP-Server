@@ -1,9 +1,9 @@
 /**
- * UselessWeb.org — Accessibility Test Cases (TC-A01 – TC-A04)
+ * UselessWeb.org — Accessibility Test Cases (TC-A01 – TC-A05)
  * ─────────────────────────────────────────────────────────────────────────────
  * Target  : https://uselessweb.org/
  * Runner  : Playwright Test (@playwright/test)
- * Coverage: TC-A01, TC-A02, TC-A03, TC-A04
+ * Coverage: TC-A01, TC-A02, TC-A03, TC-A04, TC-A05
  * Standard: WCAG 2.1 AA
  *
  * Run:
@@ -15,7 +15,7 @@ const { test, expect } = require('@playwright/test');
 
 const BASE_URL = 'https://uselessweb.org/';
 
-test.describe('Accessibility — TC-A01 to TC-A04', () => {
+test.describe('Accessibility — TC-A01 to TC-A05', () => {
   test.beforeEach(async ({ page }) => {
     await page.goto(BASE_URL, { waitUntil: 'domcontentloaded' });
   });
@@ -70,5 +70,13 @@ test.describe('Accessibility — TC-A01 to TC-A04', () => {
     }
 
     expect(missingAlt).toHaveLength(0);
+  });
+
+  // ── TC-A05 ──────────────────────────────────────────────────────────────────
+  // Requirement: Document root should declare a valid language for screen readers
+  // Expected: <html> has a non-empty lang attribute (e.g., "en")
+  test('TC-A05 · HTML element declares a non-empty lang attribute', async ({ page }) => {
+    const lang = await page.getAttribute('html', 'lang');
+    expect((lang || '').trim().length).toBeGreaterThan(0);
   });
 });
