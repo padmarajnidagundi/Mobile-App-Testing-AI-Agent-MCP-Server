@@ -44,6 +44,9 @@
   ],
   "author": "",
   "license": "ISC",
+  "engines": {
+    "node": ">=22.0.0"
+  },
   "dependencies": {
     "@modelcontextprotocol/sdk": "^1.30.0",
     "@playwright/test": "^1.62.1",
