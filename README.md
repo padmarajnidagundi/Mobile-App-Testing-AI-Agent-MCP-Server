@@ -15,6 +15,15 @@ This repository provides an AI-powered framework for mobile testing and mobile t
 
 The framework is designed to accelerate mobile test authoring, improve test stability, and provide an extensible baseline for AI-assisted mobile QA workflows.
 
+## Use Cases
+
+- Generate first-pass Android and iOS test plans for new app features from a target URL or flow.
+- Convert Markdown test plans into executable Playwright or Mobilewright test suites.
+- Run self-healing retries to recover from flaky selectors and reduce manual test maintenance.
+- Execute end-to-end Android and iOS orchestration pipelines for regression validation before releases.
+- Expose mobile testing workflows as MCP tools for integration with AI clients and automation platforms.
+- Standardize team QA workflows with repeatable planning, generation, execution, and healing stages.
+
 ## Native Development Framework Support Matrix
 
 The automation stack runs against Android and iOS app binaries/devices. In practice, this means support is based on platform runtime behavior rather than only the app framework.
