@@ -69,20 +69,20 @@ Copy-Item .env.example .env
 ## Dependencies for Mobile Automation and Mobile QA
 ### Required
 - Node.js 22.0.0+ (required by the latest direct dependencies)
-- npm 9+
+- npm 10+
 - Playwright Chromium browser
 
 ### Core NPM packages
-- mobilewright ^0.0.52
-- @playwright/test ^1.62.1
-- playwright ^1.62.1
-- @modelcontextprotocol/sdk ^1.30.0
-- zod ^4.4.3
-- openai ^7.4.0
-- dotenv ^17.4.2
-- fs-extra ^11.4.0
-- chalk ^6.0.0
-- axios ^1.19.0
+- mobilewright ^0.0.70
+- @playwright/test ^1.65.1
+- playwright ^1.65.1
+- @modelcontextprotocol/sdk ^1.32.2
+- zod ^4.6.7
+- openai ^7.59.0
+- dotenv ^18.0.10
+- fs-extra ^11.4.1
+- chalk ^6.0.1
+- axios ^1.21.1
 - cheerio ^1.2.0
 
 ### Platform prerequisites
