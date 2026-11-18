@@ -38,9 +38,6 @@ test.describe('Core Functional — TC-001 to TC-014', () => {
 
       await page.getByText(/take me somewhere useless/i).first().click();
       await page.waitForTimeout(3000);
-        // Capture any new tab that might open
-        let newPageOpened = null;
-        context.once('page', p => { newPageOpened = p; });
 
         // Button has CSS animation — use aria-label and force:true to bypass stability check
         const ctaBtn = page.locator('#random-site-btn, [aria-label*="random useless"], [aria-label*="somewhere useless"]').first()
@@ -215,18 +212,6 @@ test.describe('Core Functional — TC-001 to TC-014', () => {
     expect(href).toBeTruthy();
     expect(href).not.toContain('uselessweb.org');
   });
-    test('TC-013 · Website card external link opens a different domain', async ({ page }) => {
-      // Find first anchor with an absolute http href that is NOT on uselessweb.org
-      const href = await page.$$eval(
-        'a[href^="http"]',
-        anchors => {
-          const ext = anchors.find(a => !a.href.includes('uselessweb.org'));
-          return ext ? ext.href : null;
-        }
-      );
-      expect(href).toBeTruthy();
-      expect(href).not.toContain('uselessweb.org');
-    });
 
   // ── TC-014 ──────────────────────────────────────────────────────────────────
   test('TC-014 · How It Works section is visible', async ({ page }) => {
